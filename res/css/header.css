@@ -100,7 +100,9 @@ header {
   float: right; }
 
 .slick-slide img {
-  display: block; }
+  display: block;
+  width: 100%;
+  height: auto; }
 
 .slick-slide.slick-loading img {
   display: none; }

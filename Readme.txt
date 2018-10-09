@@ -16,8 +16,18 @@ JS:
 1. Written in main.js ['res/js' folder] which is minified into bundle.min.js 
 2. .css files are bundled into bundle.js and minified into bundle.min.js ["bundle.min.js" is not used for interviewer inspect purpose, instead "bundle.js"]
 
+Used axios.js for async call
+
 Package Manager:
 npm
 
 Task Runner:
 gulp
+
+commands:
+npm install
+"gulp" to bundle
+"gulp release" to bundle with minified version
+
+Live server to dynamic refresh browser
+npm install -g live-server

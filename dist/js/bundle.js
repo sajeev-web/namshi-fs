@@ -53,7 +53,7 @@
                 });
 
                 let searchText = sessionStorage.getItem("searchText");
-                if ($.trim(searchText).length > 0 && searchText != null && searchText != undefined && $(CONSTANTS.URLS.search).length > 0) {
+                if ($.trim(searchText).length > 0 && searchText != "null" && searchText != undefined && $(CONSTANTS.URLS.search).length > 0) {
                      $this.loadMovie(searchText);
                 }
             },
@@ -143,7 +143,7 @@
                        breakpoint: 400,
                        settings: {
                             arrows: false,
-                            slidesToShow: 2,
+                            slidesToShow: 3,
                             slidesToScroll: 1
                        }
                     }]
@@ -159,4 +159,3 @@
     
     Main.main();
 })();
-
