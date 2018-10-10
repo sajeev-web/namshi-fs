@@ -15,7 +15,7 @@
             CLASS_SELECTORS:
             {
                "tabs": ".nav-item",
-               "moviePics":  ".movie-pics",
+               "topSlider":  ".top-slider",
                "cast": ".card",
                "share": ".share-it",
                "home": ".go-back"
@@ -52,7 +52,7 @@
                     $(this).find("input").val("").focus();
                 });
 
-                let searchText = sessionStorage.getItem("searchText");
+                var searchText = sessionStorage.getItem("searchText");
                 if ($.trim(searchText).length > 0 && searchText != "null" && searchText != undefined && $(CONSTANTS.URLS.search).length > 0) {
                      $this.loadMovie(searchText);
                 }
@@ -102,7 +102,7 @@
                     $(".misc-block").html(outputMisc);
 
                     var outputPosters = `
-                        <div class="movie-pics">
+                        <div class="top-slider">
                             <div><img src="${response.data.Poster}" />
                             </div>
                             <div><img src="${response.data.Poster}" />
@@ -123,7 +123,7 @@
                 });
             },
             initialiseSlider: function() {
-                $('.movie-pics').slick({
+                $(CONSTANTS.CLASS_SELECTORS.topSlider).slick({
                     dots: false,
                     infinite: true,
                     speed: 500,
@@ -152,6 +152,12 @@
            shareIt: function() {
                 $(".title-block").delegate(".share-it", "click", function() {
                     $(".share-popup").toggleClass("d-none");
+                });
+
+                $(document).click(function(evnt) {
+                    if($(".share-popup").length > 0 && !$(".share-popup").hasClass("d-none") && !$(evnt.target).is(".share-it") ) {
+                        $(".share-popup").addClass("d-none")
+                    }
                 });
            }
         }
