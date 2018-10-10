@@ -31,3 +31,7 @@ npm install
 
 Live server to dynamic refresh browser
 npm install -g live-server
+
+
+Note: 
+Slider images are duplicated b'coz ombdapi returns only 1 poster image
